@@ -28,7 +28,6 @@ namespace APIChecker.Tests
             testCommand.HowTo = "Execute Unit Tests";
             //Assert
             Assert.Equal("Execute Unit Tests", testCommand.HowTo);
-            //Assert.Pass();
         }
         [Fact]
         public void CanChangePlatform()
