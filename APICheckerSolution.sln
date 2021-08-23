@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APICheckerAPI", "src\APICheckerAPI\APICheckerAPI.csproj", "{628D0E2A-10FE-45DB-9AD1-720CCE68B0AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIChecker.Tests", "test\APIChecker.Tests\APIChecker.Tests.csproj", "{63C39C8E-532C-4801-81BF-3734D4417FE4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIChecker.Tests", "test\APIChecker.Tests\APIChecker.Tests.csproj", "{DD413208-F53E-43C6-9BF4-F6A54F749092}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,9 +14,9 @@ Global
 		{628D0E2A-10FE-45DB-9AD1-720CCE68B0AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{628D0E2A-10FE-45DB-9AD1-720CCE68B0AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{628D0E2A-10FE-45DB-9AD1-720CCE68B0AB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{63C39C8E-532C-4801-81BF-3734D4417FE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{63C39C8E-532C-4801-81BF-3734D4417FE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{63C39C8E-532C-4801-81BF-3734D4417FE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{63C39C8E-532C-4801-81BF-3734D4417FE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD413208-F53E-43C6-9BF4-F6A54F749092}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD413208-F53E-43C6-9BF4-F6A54F749092}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD413208-F53E-43C6-9BF4-F6A54F749092}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD413208-F53E-43C6-9BF4-F6A54F749092}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
