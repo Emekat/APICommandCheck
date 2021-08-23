@@ -15,23 +15,27 @@ variables:
 steps:
 - task: UseDotNet@2
   inputs:
-    packageType: 'sdk'
-    version: '5.0.400'
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+    version: '5.0.x'
+    includePreviewVersions: true # Required for preview versions
+- task: DotNetCoreCLI@2
+  displayName: Build
+  inputs:
+    command: build
+    projects: '**/*.csproj'
+    arguments: '--configuration $(buildConfiguration)'
 - task: DotNetCoreCLI@2
   displayName: 'dotnet test'
   inputs:
     command: test
     projects: '**/*Tests/*.csproj'
     testRunTitle: 'xUnit Test Run'
-#- task: DotNetCoreCLI@2
-#  displayName: 'dotnet publish'
-#  inputs:
-#    command: publish
-#    publishWebProjects: false
-#    projects: 'src/CommandAPI/*.csproj'
-#    arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
-#- task: PublishBuildArtifacts@1
-#  displayName: 'publish artifacts'
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet publish'
+  inputs:
+    command: publish
+    publishWebProjects: false
+    projects: 'src/APICheckerAPI/*.csproj'
+    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+- task: PublishBuildArtifacts@1
+  displayName: 'publish artifacts'
  
