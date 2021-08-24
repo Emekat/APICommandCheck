@@ -9,6 +9,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace APICheckerAPI.Controllers
 {
@@ -24,14 +25,14 @@ namespace APICheckerAPI.Controllers
             _repository = repository;
             _mapper = mapper;
         }
-        
+        [Authorize]
         [HttpGet]
         public ActionResult<IEnumerable<CommandReadDto>> GetAllCommands()
         {
             var commandItems = _repository.GetAllCommands();
             return Ok(_mapper.Map<IEnumerable<CommandReadDto>>(commandItems));
         }
-        
+        [Authorize]
         [HttpGet("{id}", Name="GetCommandById")]
         public ActionResult<CommandReadDto> GetCommandById(int id)
         {
@@ -41,7 +42,7 @@ namespace APICheckerAPI.Controllers
             }
             return Ok(_mapper.Map<CommandReadDto>(commandItem));
         }
-        
+        [Authorize]
         [HttpPost]
         public ActionResult<CommandReadDto> CreateCommand(CommandCreateDto commandCreateDto)
         {
@@ -52,7 +53,7 @@ namespace APICheckerAPI.Controllers
             return CreatedAtRoute(nameof(GetCommandById),
                 new {Id = commandReadDto.Id}, commandReadDto);
         }
-        
+        [Authorize]
         [HttpPut("{id}")]
         public ActionResult UpdateCommand(int id, CommandUpdateDto commandUpdateDto)
         {
@@ -68,7 +69,7 @@ namespace APICheckerAPI.Controllers
             _repository.SaveChanges();
             return NoContent();
         }
-        
+        [Authorize]
         [HttpPatch("{id}")]
         public ActionResult PartialCommandUpdate(int id, JsonPatchDocument<CommandUpdateDto> patchDoc)
         {
@@ -89,7 +90,7 @@ namespace APICheckerAPI.Controllers
             _repository.SaveChanges();
             return NoContent();
         }
-        
+        [Authorize]
         [HttpDelete("{id}")]
         public ActionResult DeleteCommand(int id)
         {
